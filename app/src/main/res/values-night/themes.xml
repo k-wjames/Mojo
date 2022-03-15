@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.AppCompat" parent="Theme.MaterialComponents.Light.NoActionBar">
+    <style name="DarkTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/dark</item>
         <item name="colorPrimaryVariant">@color/dark</item>
@@ -12,6 +12,12 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimary</item>
         <!-- Customize your theme here. -->
+
+        <item name="background_color">@color/dark</item>
+        <!--     Our app's background changes to black when dark mode is activated -->
+        <item name="text_color">@color/white</item>
+        <!--     text and button color change to white to contrast with the app's background-->
+        <item name="button_color">@color/white</item>
 
     </style>
 </resources>

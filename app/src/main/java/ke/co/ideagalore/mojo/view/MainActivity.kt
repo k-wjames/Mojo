@@ -1,10 +1,13 @@
 package ke.co.ideagalore.mojo.view
 
 import android.os.Bundle
+import android.widget.CompoundButton
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import ke.co.ideagalore.mojo.R
 import ke.co.ideagalore.mojo.databinding.ActivityMainBinding
 import ke.co.ideagalore.mojo.viewmodel.PostListViewModel
 import java.util.*
@@ -17,10 +20,25 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
+            setTheme(R.style.DarkTheme) //when dark mode is enabled, we use the dark theme
+        } else {
+            setTheme(R.style.AppTheme)  //default app theme
+        }
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         binding.tvGreetings.text=getGreetingMessage()
+
+        binding.switchtheme.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+            } else {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+            }
+        }
 
         viewModel = ViewModelProvider(this).get(PostListViewModel::class.java)
         viewModel.refresh()
