@@ -10,7 +10,6 @@
         android:id="@+id/tv_greetings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Good afternoon"
         android:layout_marginTop="20dp"
         android:layout_marginStart="5dp"
         android:textSize="18sp"
