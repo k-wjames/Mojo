@@ -1,4 +1,4 @@
-# Mojo
+# Project Mojo
 # Language Used- Kotlin
 # App Architecture- MVVM with Live Data
 # Data Source- Remote via an API
