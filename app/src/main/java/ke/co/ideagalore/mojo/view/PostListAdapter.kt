@@ -10,13 +10,15 @@ import ke.co.ideagalore.mojo.model.Post
 
 class PostListAdapter(private val postList:ArrayList<Post>):
     RecyclerView.Adapter<PostViewHolder>() {
+
+    fun updatePostList(newUpdatedPosts:List<Post>) {
+        postList.clear()
+        postList.addAll(newUpdatedPosts)
+        notifyDataSetChanged()
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostViewHolder {
 
-        fun updatePostList(newUpdatedPosts:List<Post>){
-            postList.clear()
-            postList.addAll(newUpdatedPosts)
-            notifyDataSetChanged()
-        }
 
         val view=LayoutInflater.from(parent.context).inflate(R.layout.post_child,parent, false)
         return  PostViewHolder(view)
@@ -33,9 +35,11 @@ class PostListAdapter(private val postList:ArrayList<Post>):
     override fun getItemCount(): Int {
         return postList.size
     }
+
+
 }
 
-class PostViewHolder(val view:View):RecyclerView.ViewHolder(view){
+class PostViewHolder(view:View):RecyclerView.ViewHolder(view){
     val id: TextView=view.findViewById(R.id.tv_one);
     val title: TextView=view.findViewById(R.id.tv_two);
     val body: TextView=view.findViewById(R.id.tv_three);
