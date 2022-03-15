@@ -10,8 +10,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/rv_posts"
-        android:layout_margin="5dp"/>
+        android:id="@+id/rv_posts"/>
 
 
 </LinearLayout>
