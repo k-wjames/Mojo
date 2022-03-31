@@ -19,10 +19,8 @@ class PostListAdapter(private val postList:ArrayList<Post>):
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostViewHolder {
 
-
         val view=LayoutInflater.from(parent.context).inflate(R.layout.post_child,parent, false)
         return  PostViewHolder(view)
-
     }
 
     override fun onBindViewHolder(holder: PostViewHolder, position: Int) {

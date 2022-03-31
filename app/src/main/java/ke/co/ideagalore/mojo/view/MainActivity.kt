@@ -22,9 +22,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
-            setTheme(R.style.DarkTheme) //when dark mode is enabled, we use the dark theme
+            setTheme(R.style.DarkTheme)
         } else {
-            setTheme(R.style.AppTheme)  //default app theme
+            setTheme(R.style.AppTheme)
         }
 
         binding = ActivityMainBinding.inflate(layoutInflater)
