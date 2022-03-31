@@ -36,7 +36,6 @@ class PostListAdapter(private val postList:ArrayList<Post>):
         return postList.size
     }
 
-
 }
 
 class PostViewHolder(view:View):RecyclerView.ViewHolder(view){

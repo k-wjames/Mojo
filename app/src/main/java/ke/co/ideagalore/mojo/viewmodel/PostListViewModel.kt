@@ -21,7 +21,7 @@ class PostListViewModel : ViewModel() {
         fetchDataFromRemoteApi()
     }
 
-    fun fetchDataFromRemoteApi() {
+    private fun fetchDataFromRemoteApi() {
 
         disposable.add(
             postService.getPosts()
